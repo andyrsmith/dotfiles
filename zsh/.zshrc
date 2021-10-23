@@ -1,6 +1,6 @@
 source "$XDG_CONFIG_HOME/zsh/aliases"
 fpath=($ZDOTDIR/external $fpath)
-
+export TERM=xterm-256color
 setopt AUTO_PARAM_SLASH
 unsetopt CASE_GLOB
 
@@ -34,12 +34,18 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Location in Arch source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Location in Ubuntu
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # allow to navigate to a parent directory with bd command
 source ~/dotfiles/zsh/external/bd.zsh
 source $DOTFILES/zsh/scripts.sh
 
 if [ $(command -v "fzf") ]; then
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/fzf/key-bindings.zsh
+    # Arch location
+    #source /usr/share/fzf/completion.zsh
+    #source /usr/share/fzf/key-bindings.zsh
+    # Ubuntu location
+    source /usr/share/doc/fzf/examples/completion.zsh
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
