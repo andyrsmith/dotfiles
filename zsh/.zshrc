@@ -49,3 +49,8 @@ if [ $(command -v "fzf") ]; then
     source /usr/share/doc/fzf/examples/completion.zsh
     source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
+
+# Set Ctrl-g to clear screen
+bindkey -r '^l'
+bindkey -r '^g'
+bindkey -s '^g' 'clear\n'
