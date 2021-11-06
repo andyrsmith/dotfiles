@@ -40,10 +40,10 @@ nnoremap <leader><leader> <c-^>
 
 " Navigate splits with ctrl + hjkl
 " Conflixs with tmux same navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 
 " save undo-trees in file
 set undofile
