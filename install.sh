@@ -11,8 +11,8 @@ rm -rf "$XDG_CONFIG_HOME/X11"
 ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
 # install neovim plugin manager
-[ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
-    && curl -fLo "$DOTFILES/nvim/autoload/plug.vim" --create-dirs \
+[ ! -f "$XDG_CONFIG_HOME/nvim/autoload/plug.vim" ] \
+    && curl -fLo "$XDG_CONFIG_HOME/nvim/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #######
@@ -44,8 +44,8 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 # dunst##
 #########
 
-#mkdir -p "$XDG_DATA_HOME/dunst"
-#ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
+mkdir -p "$XDG_DATA_HOME/dunst"
+ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 
 ########
 # tmux #
