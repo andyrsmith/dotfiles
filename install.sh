@@ -9,6 +9,7 @@ ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim"
 
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
+ln -s "$DOTFILES/X11/.Xresources "$HOME"
 
 # install neovim plugin manager
 [ ! -f "$XDG_CONFIG_HOME/nvim/autoload/plug.vim" ] \
