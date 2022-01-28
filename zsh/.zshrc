@@ -7,6 +7,9 @@ unsetopt CASE_GLOB
 autoload -Uz prompt_purification_setup; prompt_purification_setup
 autoload -Uz cursor_mode && cursor_mode
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Push the current directory visited on to the stack
 setopt AUTO_PUSHD
 # Do not store duplicate directories in the stack
@@ -34,20 +37,21 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Location in Arch source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Location in Arch 
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Location in Ubuntu
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # allow to navigate to a parent directory with bd command
 source ~/dotfiles/zsh/external/bd.zsh
 source $DOTFILES/zsh/scripts.sh
 
 if [ $(command -v "fzf") ]; then
     # Arch location
-    #source /usr/share/fzf/completion.zsh
-    #source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
     # Ubuntu location
-    source /usr/share/doc/fzf/examples/completion.zsh
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    #source /usr/share/doc/fzf/examples/completion.zsh
+    #source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
 # Set Ctrl-g to clear screen
