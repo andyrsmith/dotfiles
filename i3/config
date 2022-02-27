@@ -81,6 +81,27 @@ client.urgent     $red1 $red1  $white2 $red1 $red1
 client.placeholder #000000 #0c0c0c $white2 #000000 #0c0c0c
 
 for_window[class="URxvt*"]border pixel 1
+
+# Terminal scratchpad
+for_window [instance="urxvt_scratchpad"] move scratchpad, border none 
+for_window [instance="urxvt_scratchpad"] floating enable
+bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+exec --no-startup-id urxvt -name urxvt_scratchpad \
+-e tmux new-session -d -s scratchpad \; \
+new-window -n vim 'nvim +e /tmp/nvim-tmp.md'\; \
+attach-session -d -t scratchpad
+
+# htop  scratchpad
+for_window [instance="htop_scratchpad"] move scratchpad, border none
+bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
+exec urxt -name htop_scratchpad -e htop
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+exec --no-startup-id urxt -tile scratch
+for_window [title="^scratch$"] move scratchpad
+#bindsym $mod+Shift+t [title="^scratch$"] scratchpad show
 #####################
 # workspace layout: #
 #####################
