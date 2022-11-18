@@ -21,6 +21,8 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'w0rp/ale'
     " Markdown Preview
     Plug 'iamcco/markdown-preview.nvim' 
+    " Plugin for ca65 assembly language
+    Plug 'maxbane/vim-asm_ca65'
 call plug#end()
 
 if (has("termguicolors"))
@@ -28,7 +30,11 @@ if (has("termguicolors"))
 endif
 set background=dark
 colorscheme gruvbox
-
+" Configuration for assembly language formatting
+filetype plugin indent on
+augroup filetypedetect
+    au BufNewFile,BufRead *.s,*.inc set ft=asm_ca65
+augroup END
 " Allows you to paste files in
 set clipboard +=unnamedplus
 

@@ -88,7 +88,7 @@ for_window [instance="urxvt_scratchpad"] floating enable
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
 exec --no-startup-id urxvt -name urxvt_scratchpad \
 -e tmux new-session -d -s scratchpad \; \
-new-window -n vim 'nvim +e /tmp/nvim-tmp.md'\; \
+#new-window -n vim 'nvim +e /tmp/nvim-tmp.md'\; \
 attach-session -d -t scratchpad
 
 # htop  scratchpad
