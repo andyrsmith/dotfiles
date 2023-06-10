@@ -217,9 +217,10 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
-#        bindsym j resize shrink width 10 px or 10 ppt
-#        bindsym k resize grow height 10 px or 10 ppt
-#        bindsym l resize shrink height 10 px or 10 ppt
+bindsym $mod+y resize shrink width 10 px or 10 ppt
+bindsym $mod+u resize grow width 10 px or 10 ppt
+bindsym $mod+i resize shrink height 10 px or 10 ppt
+bindsym $mod+o resize grow height 10 px or 10 ppt
 #        bindsym ntilde resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
@@ -362,8 +363,8 @@ bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 set $ws1 "1: 1 term"
 set $ws2 "2: 2 web"
 set $ws3 "3: 3 Discord"
-set $ws4 "4"
-set $ws5 "5"
+set $ws4 "4: 4 Spotify"
+set $ws5 "5: 5 files"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -383,12 +384,14 @@ set $ws10 "10"
 assign [class="^URxvt$"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="^discord$"] $ws3
+assign [class="(?i)spotify"] $ws4
 
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=URxvt] focus
 for_window [class=(?i)firefox] focus
 for_window [class=discord] focus
+for_window [class=(?i)spotify] focus
 
 #############################################
 # autostart applications/services on login: #
@@ -447,6 +450,12 @@ exec --no-startup-id nitrogen --restore
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
+# set lock screen background
+set $i3lockwall i3lock /usr/share/endeavouros/backgrounds/endeavouros_wallpaper.png
+
+set $i3lockwall.sh ~/.config/i3/scripts/lock.sh
+
+bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # alternative if you installed aside with XFCE4:
