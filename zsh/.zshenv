@@ -24,3 +24,8 @@ export DOTFILES="$HOME/dotfiles"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 . "$HOME/.cargo/env"
+
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="/home/andy/.config/nvm/versions/node/v18.0.0/bin:/home/andy/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GEM_HOME/bin:/home/andy/.joplin"
+
+

@@ -210,6 +210,12 @@ bindcode $mod+Shift+80 	 move container to workspace  $ws8
 bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
+# move container to other monitor
+bindsym $mod+shift+greater move container output right
+bindsym $mod+shift+less move container output left
+
+bindsym $mod+shift+l move workspace to output left
+bindsym $mod+shift+k move workspace to output right
 # resize window (you can also use the mouse for that):
 #mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
