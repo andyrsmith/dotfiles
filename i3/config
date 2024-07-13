@@ -75,7 +75,7 @@ hide_edge_borders both
 
 # class        border    backgr  text indicator  child_border
 client.focused   #333333 $black2 $white2 #285577
-client.focused.inactive #333333 $background $foreground #484e50
+client.focused_inactive #333333 $background $foreground #484e50
 client.unfocused  #333333 #222222 #888888 #292d2e #222222
 client.urgent     $red1 $red1  $white2 $red1 $red1
 client.placeholder #000000 #0c0c0c $white2 #000000 #0c0c0c
@@ -211,11 +211,11 @@ bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # move container to other monitor
-bindsym $mod+shift+greater move container output right
-bindsym $mod+shift+less move container output left
+bindsym $mod+Shift+greater move container output right
+bindsym $mod+Shift+less move container output left
 
-bindsym $mod+shift+l move workspace to output left
-bindsym $mod+shift+k move workspace to output right
+bindsym $mod+Shift+l move workspace to output left
+bindsym $mod+Shift+k move workspace to output right
 # resize window (you can also use the mouse for that):
 #mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
@@ -247,7 +247,7 @@ bindsym $mod+o resize grow height 10 px or 10 ppt
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -259,7 +259,7 @@ bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+Shift+k exec ~/.config/i3/scripts/blur-lock
+bindsym $mod+Shift+b exec ~/.config/i3/scripts/blur-lock
 
 # hibernate
 bindsym $mod+Shift+h exec systemctl hibernate
@@ -291,8 +291,8 @@ bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon right
 
 # alternatively, you can use the cursor keys:
