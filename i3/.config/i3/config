@@ -214,8 +214,10 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 bindsym $mod+Shift+greater move container output right
 bindsym $mod+Shift+less move container output left
 
-bindsym $mod+Shift+l move workspace to output left
-bindsym $mod+Shift+k move workspace to output right
+bindsym $mod+Shift+l workspace next
+bindsym $mod+Shift+k workspace prev
+#bindsym $mod+Shift+l move workspace to output left
+#bindsym $mod+Shift+k move workspace to output right
 # resize window (you can also use the mouse for that):
 #mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
@@ -240,7 +242,7 @@ bindsym $mod+o resize grow height 10 px or 10 ppt
 #        bindsym Escape mode "default"
 #}
 
-#bindsym $mod+r mode "resize"
+bindsym $mod+r mode "resize"
 
 ######################################
 # keybindings for different actions: #
@@ -262,7 +264,7 @@ bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 bindsym $mod+Shift+b exec ~/.config/i3/scripts/blur-lock
 
 # hibernate
-bindsym $mod+Shift+h exec systemctl hibernate
+#bindsym $mod+Shift+h exec systemctl hibernate
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -379,11 +381,11 @@ bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: 1 term"
-set $ws2 "2: 2 web"
-set $ws3 "3: 3 Discord"
-set $ws4 "4: 4 Spotify"
-set $ws5 "5: 5 files"
+set $ws1 "1: 1 Term"
+set $ws2 "2: 2 Obsidian"
+set $ws3 "3: 3 Web"
+set $ws4 "4: 4"
+set $ws5 "5: 5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -400,17 +402,15 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [class="^URxvt$"] $ws1
-assign [class="(?i)firefox"] $ws2
-assign [class="^discord$"] $ws3
-assign [class="(?i)spotify"] $ws4
+assign [class="^kitty"] $ws1
+assign [class="^obsidian$"] $ws2
+assign [class="(?i)firefox"] $ws3
 
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=kitty] focus
 for_window [class=(?i)firefox] focus
-for_window [class=discord] focus
-for_window [class=(?i)spotify] focus
+for_window [class=obsidian] focus
 
 #############################################
 # autostart applications/services on login: #
@@ -444,6 +444,7 @@ exec --no-startup-id ~/.screenlayout/single-display.sh
 bindsym Mod4+Shift+s exec ~/.screenlayout/single-display.sh 
 bindsym Mod4+Shift+d exec ~/.screenlayout/main-multi-monitors.sh 
 bindsym Mod4+Shift+f exec ~/.screenlayout/second-multi-monitors.sh
+bindsyn $mod+Shift+m exec ~/.screenlayout/mirror.sh
 # start blueberry app for managing bluetooth devices from tray:
 exec --no-startup-id blueberry-tray
 

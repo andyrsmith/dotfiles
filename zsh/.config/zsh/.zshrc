@@ -75,5 +75,13 @@ function cheat() {
     #fi
 }
 
+function edit-cheat() {
+    if [ "$1" != "" ]; then
+        nvim ~/Documents/vault/04-Resources/Cheatsheats/$1.md
+    else
+        nvim ~/Documents/vault/04-Resources/Cheatsheats/
+    fi
+}
+
 # Created by `pipx` on 2025-07-19 17:48:48
 export PATH="$PATH:/home/andy/.local/bin"
