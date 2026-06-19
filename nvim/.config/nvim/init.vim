@@ -26,8 +26,26 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     " Plugin for ca65 assembly language
     Plug 'maxbane/vim-asm_ca65'
     Plug 'github/copilot.vim'
+    Plug 'zk-org/zk-nvim'
 call plug#end()
 
+lua << EOF
+require("zk").setup({
+  picker = "telescope",
+
+  lsp = {
+    config = {
+      name = "zk",
+      cmd = { "zk", "lsp" },
+      filetypes = { "markdown" },
+    },
+
+    auto_attach = {
+      enabled = true,
+    },
+  },
+})
+EOF
 if (has("termguicolors"))
  set termguicolors
 endif
@@ -306,3 +324,4 @@ let g:mkdp_filetypes = ['markdown']
 nmap <C-s> <Plug>MarkdownPreview
 nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
+

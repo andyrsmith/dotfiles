@@ -83,5 +83,4 @@ function edit-cheat() {
     fi
 }
 
-# Created by `pipx` on 2025-07-19 17:48:48
-export PATH="$PATH:/home/andy/.local/bin"
+export PATH="/home/andy/.config/nvm/versions/node/v22.18.0/bin:/home/andy/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GEM_HOME/bin:/home/andy/.joplin:/home/andy/scripts:/usr/local/go/bin:/home/andy/src/clones/emsdk:/home/andy/src/clones/emsdk/upstream/emscripten:/home/andy/.local/bin"

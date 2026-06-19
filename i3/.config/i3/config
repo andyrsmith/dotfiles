@@ -85,7 +85,7 @@ for_window[class="URxvt*"]border pixel 1
 # Terminal scratchpad
 for_window [instance="urxvt_scratchpad"] move scratchpad, border none 
 for_window [instance="urxvt_scratchpad"] floating enable
-bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+#bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
 exec --no-startup-id urxvt -name urxvt_scratchpad \
 -e tmux new-session -d -s scratchpad \; \
 #new-window -n vim 'nvim +e /tmp/nvim-tmp.md'\; \
@@ -101,7 +101,7 @@ bindsym $mod+minus scratchpad show
 
 exec --no-startup-id urxt -tile scratch
 for_window [title="^scratch$"] move scratchpad
-#bindsym $mod+Shift+t [title="^scratch$"] scratchpad show
+bindsym $mod+Shift+t [title="^scratch$"] scratchpad show
 #####################
 # workspace layout: #
 #####################
